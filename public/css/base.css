@@ -1,63 +1,93 @@
-
 body {
-  background: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  margin: 0;
-  padding: 30px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #eee;
 }
 
-a {
-  color: #4183c4;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-code {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
-  font-size: 12px;
-  margin: 0 2px;
-  padding: 0 5px;
-}
-
-h1, h2, h3, h4 {
-  font-weight: bold;
-  margin: 0 0 15px;
-  padding: 0;
+.container {
+  margin-top:20px;
 }
 
 h1 {
-  border-bottom: 1px solid #ddd;
-  font-size: 2.5em;
-  font-weight: bold;
-  margin: 0 0 15px;
-  padding: 0;
+  font-size: 5em;
+  text-transform: uppercase;
+  text-align:center;
+  font-family: 'Fjalla One', sans-serif;
+  color: #00bbd6;
 }
 
 h2 {
-  border-bottom: 1px solid #eee;
-  font-size: 2em;
+  text-align:center;
+  font-size:1em;
+  margin-bottom:20px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  padding: 10px 0;
 }
 
-h3 {
-  font-size: 1.5em;
+.row {
+height:220px;
 }
 
-h4 {
-  font-size: 1.2em;
+.col-sm-4 {
 }
 
-p, ul {
-  margin: 15px 0;
+.demo-card-wide.mdl-card {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 100%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
 }
 
-ul {
-  padding-left: 30px;
+.title {
+  color: #fff;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+}
+
+.flip-container:active .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+  height:190px;
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  background: #00bbd6;
+  padding: 15px;
+  height:190px;
 }

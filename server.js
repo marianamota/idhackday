@@ -16,19 +16,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-// Simple in-memory datastore, can't write to comments.json as in tutorial
-var comments = [
-    {
-        "id": 1388534400000,
-        "author": "Pete Hunt",
-        "text": "Hey there!"
-    },
-    {
-        "id": 1420070400000,
-        "author": "Paul O’Shannessy",
-        "text": "React is *great*!"
-    }
-];
 
 app.set('port', (process.env.PORT || 3000));
 
